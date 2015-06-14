@@ -65,7 +65,7 @@
                     if (tweetLayer && tweetLayer != "undefined") { tweetLayer.clear() }
                     tweetLayer = new GraphicsLayer();
                     //console.log(tweets);
-                    var symbol = new esri.symbol.PictureMarkerSymbol("imgs/twitter_icon.png", 16, 13);
+                    var symbol = new PictureMarkerSymbol("imgs/twitter_icon.png", 16, 13);
 
                     tweets.statuses.forEach( function(tweet, index) {
                         var geo = tweet.geo
