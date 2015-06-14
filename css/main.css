@@ -1,0 +1,83 @@
+
+html, body {
+	color: white;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+a { color: #5EA9DD !important; }
+
+path { stroke: rgba(94, 169, 221, 0.5) !important }
+
+
+.main {
+
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+	height: 600px;
+	width: 100%;
+}
+
+#search {
+	position: relative;
+	z-index: 2;
+	left: 62px;
+	top: 54px;
+	}
+
+.twitterinput {
+	background-color: #5EA9DD;
+}
+
+.logo {
+	width: 36px;
+	height: 32px;
+	margin-bottom: 5px;
+
+}
+
+.usertext{
+	word-wrap: break-word;
+}
+
+
+.userphoto {
+	float: left;
+	display: inline;
+	padding-top: 3px;
+	padding-right: 10px;
+	padding-bottom: 30px;
+}
+
+.photo {
+	border-radius: 15px;
+
+}
+
+.control-label {
+	padding-top: 0px !important;
+	font-size: 22px !important;
+}
+
+.go {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.gobutton {
+	width: 100%;
+	background-color: #5EA9DD;
+	border-color: #66B8FF;
+}
+
+@media (max-width: 700px) {
+	.arcgisSearch .searchGroup .searchInput {
+		width: 140px !important;
+	}
+}
