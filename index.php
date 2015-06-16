@@ -2,16 +2,14 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Twitter Mapping - Map a Keyword</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
 
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://js.arcgis.com/3.13/"></script>
 		<script src="js/bootstrap.js"></script>
 
@@ -20,8 +18,8 @@
 	</head>
 
 	<body>
-
 		<div class="container">
+
 			<form id="form" class="form-horizontal">
 				<fieldset>
 
@@ -36,17 +34,7 @@
 
 					</div>
 				</div>
-
-				<!-- Max Tweets input
-				<div class="form-group">
-					<label class="col-md-4 control-label" for="count" style="color: #55acee;"></label>
-					<div class="col-md-4">
-					<input id="count" name="count" type="text" placeholder="Max Tweets" class="form-control input-md" required="">
-
-					</div>
-				</div> -->
-
-				<!-- Button -->
+				<!-- Go button -->
 				<div class="control-group">
 				  <div class="col-md-4"></div>
 				  <div class="col-md-4 controls go">
@@ -56,7 +44,6 @@
 
 				</fieldset>
 			</form>
-
 
 			<div id="map">
 				<div id="search"></div>

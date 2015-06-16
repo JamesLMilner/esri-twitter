@@ -21,6 +21,7 @@
     ) {
         var map;
         var tweetLayer;
+        var form = dom.byId('form');
 
         if (navigator.geolocation) {
             console.log("Geolocation is supported")
@@ -62,25 +63,27 @@
                 },
                 handleAs : "json"
             }).then( function(tweets){
-                console.log(tweets)
-                    map.graphicsLayerIds[0]
 
+                console.log(tweets)
+                if (tweets && tweets.statuses.length) {
+                    query("#tag").style("background-color", "white");
                     if (tweetLayer && tweetLayer != "undefined") { tweetLayer.clear() }
                     tweetLayer = new GraphicsLayer();
                     var symbol = new PictureMarkerSymbol("imgs/twitter_icon.png", 16, 13);
 
                     tweets.statuses.forEach( function(tweet, index) {
-                        var geo = tweet.geo
+                        var geo = tweet.geo;
                         if (geo && geo.coordinates.length == 2 ) {
                             var longitude = geo.coordinates[1];
                             var latitude =  geo.coordinates[0];
 
                             var point = new Point(longitude, latitude);
-                            var date;
+                            var date = "time/date unknown";
                             if (tweet.created_at) {
-                                date =  tweet.created_at.replace("+0000", "");
-
+                                date = tweet.created_at.replace("+0000", "");
                             }
+
+                            // Title and then content of popup
                             var infoTemplate = new InfoTemplate(
                                 "<a href='http://www.twitter.com/" + tweet.user.screen_name + "'>" + tweet.user.name + "</a>",
                                 "<div class='userphoto'><img class='photo' src='" + tweet.user.profile_image_url + "'></div><div class='usertext'>" + tweet.text  + "<br><br><br><b>Tweeted: </b> " + date + "</div>"
@@ -93,27 +96,30 @@
 
                     map.addLayer(tweetLayer);
                     console.log("Done adding tweets");
+                }
+
+                else {
+                    query("#tag").style("background-color", "rgb(255, 93, 80)");
+                    console.log("No tweets found with this tag!")
+                }
 
             });
         }
 
         // Attach the onsubmit event handler of the form
-        on(dom.byId('form'), "submit", function(evt){
+        on(form, "submit", function(evt){
 
             // prevent the page from navigating after submit
             evt.stopPropagation();
             evt.preventDefault();
 
-            var tag = dom.byId('tag').value;
-            var count = 100;  //+data[1].value;
+            var tag = dom.byId('tag').value; // Get the form value
+            var count = 100;  // 100 is the return allowed
             var objectCenter = webMercatorUtils.webMercatorToGeographic(map.extent.getCenter());
             var center = objectCenter.x + "," + objectCenter.y;
             var radius = (map.extent.getWidth() / 1000) / 2;
             // The width is in meters so divide by 1000, and to get a good radius divide by 2
 
-            query("#tag").style("background-color", "white");
-            query("#count").style("background-color", "white");
-            console.log("Getting tweets", tag, count, center, radius);
             getTweets(tag, count, center, radius);
 
         });
