@@ -1,13 +1,13 @@
-# esri-twitter
-Using the Twitter API in conjunction with the ArcGIS JavaScript API
+# A Twitter Map
+An example of how to use the Twitter Search API in conjunction with the ArcGIS JavaScript API
 
 # What Is It ?
- 
-A simple map that allows users to search for tweets referring to a specific keyword in a given view extent. Currently the Twitter search API only allows you to pull back a maximum of 100 tweets, but it gives you a flavour for what you might be able to do if you had/have access to the Twitter firehose! The application also demonstrates how to do common tasks you might do in jQuery via Dojo. For example DOM querying, styling and AJAX using the requests module. This allows us as developers to not have to import an extra library whilst using the ArcGIS JavaScript API, reducing page weight.
- 
+
+A simple map that allows users to search for tweets referring to a specific keyword in a given view extent. Currently the Twitter search API only allows you to pull back a maximum of 100 tweets, but it gives you a flavour for what you might be able to do if you had/have access to the Twitter firehose! The application also demonstrates how to do common tasks you might do in jQuery via Dojo. For example DOM querying, styling and AJAX using the requests module. This allows us as developers to not have to import an extra library whilst using the ArcGIS JavaScript API, reducing page weight. The page uses PHP for it's backend interaction with the Twitter API. It leverages  [J7mbo's twitter-api-php](https://github.com/J7mbo/twitter-api-php) for Twitter API authentication.
+
 # What Does It Look Like?
 
-Screenshot coming soon!
+![esri-twitter screenshot](https://raw.githubusercontent.com/JamesMilnerUK/esri-twitter/master/screenshot.png)
 
 # Live Demo
 
