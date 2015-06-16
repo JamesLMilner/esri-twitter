@@ -11,7 +11,7 @@ A simple map that allows users to search for tweets referring to a specific keyw
 
 # Live Demo
 
-You can see the live demo at by following the link here.
+You can see the live demo at by following the link [here](http://http://www.loxodrome.io/demos/esri-twitter/index.php).
 
 #Issues
 Find a bug or want to request a new feature? Please let us know by submitting an issue. Thank you!
